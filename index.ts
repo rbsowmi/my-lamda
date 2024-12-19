@@ -33,7 +33,7 @@ export const handler = async (event: any) => {
         userData.password = encryptedPassword;
         userData.userid = uniqueid();
         const params = {
-            TableName: 'User',
+            TableName: 'projects',
             Item: {
                 username: { S: userData.username },
                 email: { S: userData.email },
@@ -51,7 +51,7 @@ export const handler = async (event: any) => {
 
     try {
         const { httpMethod, path, body } = event;
-        if (httpMethod === 'POST' && path === '/Users/Registers') {
+        if (httpMethod === 'POST') {
             const userData: UserData = JSON.parse(body);
             const userRegex = /^[a-zA-Z0-9_-]{3,20}$/;
             const emailRegex = /^[a-z0-9._%+-]{1,30}@gmail\.com$/;
