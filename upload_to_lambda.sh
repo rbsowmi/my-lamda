@@ -8,4 +8,4 @@ mv dist/index.zip /tmp/myLamda/index.zip
 cp .env /tmp/myLamda/.env
 ls /tmp/myLamda
 aws s3 cp /tmp/myLamda/index.zip s3://projectscicds/index.zip
-aws lambda update-function-code --function-name myLamda --s3-bucket projectscicds --s3-key projectscicds/index.zip
+aws lambda update-function-code --function-name myLamda --s3-bucket projectscicds --s3-key index.zip
